@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Login
+{% endblock %}
+
+{% block contenido %}
+    <h2>Inicio de sesion</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Correo del usuario" name="username">
+        <input type="password" name="password" placeholder="Contraseña del usuario">
+    </form>
+{% endblock %}
