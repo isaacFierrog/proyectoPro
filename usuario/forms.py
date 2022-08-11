@@ -45,27 +45,32 @@ class FormularioUsuario(forms.ModelForm):
         widget = {
             'correo': forms.EmailInput(
                 attrs={
-                    'placeholder': 'Correo electronico'
+                    'placeholder': 'Correo electronico',
+                    'class': 'form-control'
                 }
             ),
             'nombre': forms.TextInput(
                 attrs={
-                    'placeholder': 'Ingrese su nombre'
+                    'placeholder': 'Ingrese su nombre',
+                    'class': 'form-control'
                 }
             ),
             'apellido': forms.TextInput(
                 attrs={
-                    'placeholder': 'Ingrese su apellido'
+                    'placeholder': 'Ingrese su apellido',
+                    'class': 'form-control'
                 }
             ),
             'mina': forms.NumberInput(
                 attrs={
-                    'placeholder': 'Seleccione la mina a la que sera asignado'
+                    'placeholder': 'Seleccione la mina a la que sera asignado',
+                    'class': 'form-control'
                 }
             ),
             'zona': forms.NumberInput(
                 attrs={
-                    'placeholder': 'Seleccione la zona a la que sera asignado'
+                    'placeholder': 'Seleccione la zona a la que sera asignado',
+                    'class': 'form-control'
                 }
             ),
         }
