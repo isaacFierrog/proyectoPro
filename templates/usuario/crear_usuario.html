@@ -1,14 +1,16 @@
 {% extends 'index.html' %}
 
 {% block titulo %}
-    Login
+    Crear usuario
 {% endblock %}
 
 {% block contenido %}
-    <h2>Inicio de sesion</h2>
+    <h2>Crear usuario</h2>
+
     <form method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" class="btn btn-primary mt-2" value="Ingresar">
+        <input type="submit" value="Registrar">
     </form>
 {% endblock %}
+
