@@ -3,7 +3,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://proyecto-prom.herokuapp.com/']
 
 DATABASES = {
     'default': {
