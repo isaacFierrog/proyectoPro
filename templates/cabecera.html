@@ -9,7 +9,7 @@
           {% if user.is_staff %}
             <li><a href="{% url 'usuario:listar' %}" class="nav-link px-2 text-secondary">Usuarios</a></li>
           {% endif %}
-          <li><a href="#" class="nav-link px-2 text-white">Modulos</a></li>
+          <li><a href="{% url 'modulo:listar' %}" class="nav-link px-2 text-white">Modulos</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
           <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>

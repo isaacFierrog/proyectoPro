@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Modulos
+{% endblock %}
+
+{% block contenido %}
+    <h1>Listado de modulos</h1>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">MAC</th>
+            <th scope="col">MINA</th>
+            <th scope="col">AREA</th>
+            <th scope="col">OPCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for modulo in object_list %}
+                <tr>
+                    <th scope="row">{{ modulo.id }}</th>
+                    <td>{{ modulo.mac }}</td>
+                    <td>{{ modulo.mina }}</td>
+                    <td>{{ modulo.area }}</td>
+                    <td>
+                        <a href="{% url 'modulo:editar' modulo.id %}" class="btn btn-primary">Editar</a>
+                        <a href="{% url 'modulo:eliminar' modulo.id %}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}
