@@ -108,13 +108,11 @@ STATICFILES_DIRS = (
 )
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    "http://127.0.0.1:5500/",
+    "*",
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:8080",
-    "http://127.0.0.1:5500/",
+    "*"
 ]
 
 # Default primary key field type
