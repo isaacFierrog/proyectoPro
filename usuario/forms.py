@@ -17,6 +17,7 @@ class FormularioUsuario(forms.ModelForm):
         label='Contraseña',
         widget=forms.PasswordInput(
             attrs={
+                'class': 'form-control',
                 'placeholder': 'Ingrese su contraseña',
                 'id': 'password1',
                 'required': 'required'
@@ -27,6 +28,7 @@ class FormularioUsuario(forms.ModelForm):
         label='Contraseña de confirmacion',
         widget=forms.PasswordInput(
             attrs={
+                'class': 'form-control',
                 'placeholder': 'Ingrese nuevamente su contraseña',
                 'id': 'password2',
                 'required': 'required'
