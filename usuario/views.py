@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
@@ -44,6 +44,7 @@ class RegistrarUsuario(CreateView):
 class ListarUsuario(ListView):
     model = UsuarioModel
     template_name = 'usuario/listar_usuario.html'
+    ordering = ('-id',)
     
     def get_queryset(self):
         return self.model.objects.filter(is_active=True)
@@ -54,3 +55,16 @@ class UsuarioUpdateView(UpdateView):
     form_class = FormularioUsuario
     template_name = 'usuario/crear_usuario.html'
     success_url = reverse_lazy('usuario:listar')
+    
+    
+class EliminarUsuario(DeleteView):
+    model = UsuarioModel
+    template_name = 'usuario/eliminar_usuario.html'
+    success_url = reverse_lazy('usuario:listar')
+    
+    def post(self, request, pk=None):
+        usuario = self.model.objects.get(id=pk)
+        usuario.is_active = False
+        usuario.save()
+        
+        return redirect('usuario:listar')

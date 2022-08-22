@@ -17,6 +17,7 @@ class ModuloViewSet(ModelViewSet):
 class ModuloListView(ListView):
     model = ModuloModel
     template_name = 'modulo/listar_modulo.html'
+    ordering = ('-id',)
     
     
 class ModuloCreateView(CreateView):

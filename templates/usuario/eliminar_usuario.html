@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Eliminar usuario
+{% endblock %}
+
+{% block contenido %}
+    <h1>¿Deseas eliminar al usuario {{ usuariomodel.nombre }}?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Eliminar">
+    </form>
+{% endblock %}
