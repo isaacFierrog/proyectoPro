@@ -1,8 +1,17 @@
+from django.views.generic import ListView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import SensorSerializer
+from .models import SensorModel
 from modulo.models import ModuloModel
+
+
+
+class SensorListView(ListView):
+    model = SensorModel
+    queryset = SensorModel.objects.all()
+    template_name = 'sensor/listar_sensor.html'
 
 
 class SensorViewSet(ModelViewSet):

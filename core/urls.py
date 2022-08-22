@@ -9,6 +9,7 @@ urlpatterns = [
     path('api/', include('modulo.routers')),
     path('api/', include('sensor.routers')),
     path("modulo/", include(('modulo.urls', 'modulo'))),
+    path('sensor/', include(('sensor.urls', 'sensor'))),
     path('usuario/', include(('usuario.urls', 'usuario'))),
     path('accounts/login/', Login.as_view(), name='login'),
     path('logout/', login_required(logout_usuario), name='logout')
