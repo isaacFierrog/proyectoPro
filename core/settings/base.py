@@ -25,7 +25,8 @@ LOCAL_APPS = [
     'modulo',
     'sensor',
     'home',
-    'usuario'
+    'usuario',
+    'tarea'
 ]
 
 THIRD_APPS = [
